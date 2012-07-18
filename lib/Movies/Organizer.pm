@@ -13,7 +13,7 @@ package Movies::Organizer;
 use strict;
 use warnings;
 
-our $VERSION = '0.5';    # VERSION
+our $VERSION = '0.6';    # VERSION
 
 use Moo;
 use MooX::Options;
@@ -326,7 +326,7 @@ Movies::Organizer - Organize your movies using imdb
 
 =head1 VERSION
 
-version 0.5
+version 0.6
 
 =head1 SYNOPSIS
 

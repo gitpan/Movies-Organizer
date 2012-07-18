@@ -35,7 +35,7 @@ resources:
   bugtracker: https://github.com/celogeek/MoviesOrganizer/issues
   homepage: https://github.com/celogeek/MoviesOrganizer/wiki
   repository: git://github.com/celogeek/MoviesOrganizer.git
-version: 0.5
+version: 0.6
 x_Dist_Zilla:
   plugins:
     -
