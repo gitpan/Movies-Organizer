@@ -21,7 +21,7 @@ my %module_build_args = (
     "celogeek <me\@celogeek.com>"
   ],
   "dist_name" => "Movies-Organizer",
-  "dist_version" => "0.4",
+  "dist_version" => "0.5",
   "license" => "perl",
   "module_name" => "Movies::Organizer",
   "recommends" => {},

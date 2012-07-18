@@ -11,10 +11,11 @@
 # PODNAME: movies_organizer
 # ABSTRACT: organize your movie specialy for boxee
 
+
 use strict;
 use warnings;
 
-our $VERSION = '0.4'; # VERSION
+our $VERSION = '0.5'; # VERSION
 
 use Movies::Organizer;
 my $organizer = Movies::Organizer->new_with_options;
@@ -30,7 +31,12 @@ movies_organizer - organize your movie specialy for boxee
 
 =head1 VERSION
 
-version 0.4
+version 0.5
+
+=head1 SYNOPSIS
+
+    movies_organizer -h
+    movies_organizer --from /movies/to/rename --to /movies_well_named
 
 =head1 BUGS
 
