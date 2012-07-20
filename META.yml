@@ -22,7 +22,7 @@ requires:
   Data::Dumper: 0
   File::Copy: 0
   File::Glob: 0
-  File::Path: 0
+  File::Path: 2.08
   File::Spec: 0
   IMDB::Film: 0
   Moo: 0
@@ -35,7 +35,7 @@ resources:
   bugtracker: https://github.com/celogeek/MoviesOrganizer/issues
   homepage: https://github.com/celogeek/MoviesOrganizer/wiki
   repository: git://github.com/celogeek/MoviesOrganizer.git
-version: 0.6
+version: 0.7
 x_Dist_Zilla:
   plugins:
     -

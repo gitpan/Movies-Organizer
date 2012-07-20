@@ -13,11 +13,11 @@ package Movies::Organizer;
 use strict;
 use warnings;
 
-our $VERSION = '0.6';    # VERSION
+our $VERSION = '0.7';    # VERSION
 
 use Moo;
 use MooX::Options;
-use File::Path 'make_path';
+use File::Path 2.08 'make_path';
 use Carp;
 use Data::Dumper;
 use File::Glob ':globally';
@@ -326,7 +326,7 @@ Movies::Organizer - Organize your movies using imdb
 
 =head1 VERSION
 
-version 0.6
+version 0.7
 
 =head1 SYNOPSIS
 

@@ -21,7 +21,7 @@ my %module_build_args = (
     "celogeek <me\@celogeek.com>"
   ],
   "dist_name" => "Movies-Organizer",
-  "dist_version" => "0.6",
+  "dist_version" => "0.7",
   "license" => "perl",
   "module_name" => "Movies::Organizer",
   "recommends" => {},
@@ -31,7 +31,7 @@ my %module_build_args = (
     "Data::Dumper" => 0,
     "File::Copy" => 0,
     "File::Glob" => 0,
-    "File::Path" => 0,
+    "File::Path" => "2.08",
     "File::Spec" => 0,
     "IMDB::Film" => 0,
     "Moo" => 0,
