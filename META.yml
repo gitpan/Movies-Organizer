@@ -28,6 +28,7 @@ requires:
   Moo: 0
   MooX::Options: 0
   Term::ReadLine: 0
+  Term::ReadLine::Perl: 0
   perl: 5.010
   strict: 0
   warnings: 0
@@ -35,7 +36,7 @@ resources:
   bugtracker: https://github.com/celogeek/MoviesOrganizer/issues
   homepage: https://github.com/celogeek/MoviesOrganizer/wiki
   repository: git://github.com/celogeek/MoviesOrganizer.git
-version: 0.7
+version: 0.8
 x_Dist_Zilla:
   plugins:
     -

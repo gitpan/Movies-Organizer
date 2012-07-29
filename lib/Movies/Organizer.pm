@@ -13,7 +13,7 @@ package Movies::Organizer;
 use strict;
 use warnings;
 
-our $VERSION = '0.7';    # VERSION
+our $VERSION = '0.8';    # VERSION
 
 use Moo;
 use MooX::Options;
@@ -24,6 +24,7 @@ use File::Glob ':globally';
 use File::Spec;
 use File::Copy;
 use Term::ReadLine;
+use Term::ReadLine::Perl;
 use IMDB::Film;
 use 5.010;
 
@@ -62,6 +63,12 @@ option 'min_size' => (
     default => sub { 100 * 1024**2 },
     doc     => 'minimum size of file to handle it has movies',
     format  => 'i',
+);
+
+option 'with_aka' => (
+    is      => 'ro',
+    default => sub {0},
+    doc     => 'show alsa known as for movies title',
 );
 
 has '_filter_words' => (
@@ -229,8 +236,8 @@ sub run {
                 $imdb = undef if !$imdb->status;
                 if ($imdb) {
                     say "Movie    : ", $imdb->title;
-                    say "Aka      : ",
-                        join( ', ', @{ $imdb->also_known_as } );
+                    say "Aka      : ", join( ', ', @{ $imdb->also_known_as } )
+                        if $self->with_aka;
                     say "Kind     : ", $imdb->kind;
                     say "Year     : ", $imdb->year;
                     say "Plot     : ", $imdb->plot;
@@ -251,7 +258,8 @@ sub run {
                 }
             }
             $movie_title = $imdb->title;
-            my @movie_titles = ( $imdb->title, @{ $imdb->also_known_as } );
+            my @movie_titles = ($movie_title);
+            push @movie_titles, @{ $imdb->also_known_as } if $self->with_aka;
             if ( @movie_titles > 1 ) {
                 my $choice;
                 say "Select best title : ";
@@ -302,12 +310,12 @@ sub run {
         }
 
         $self->move_movie(
-            term        => $term,
-            movie       => $movie,
-            imdb        => $imdb,
-            movie_title => $movie_title,
-            season      => $season,
-            episode     => $episode
+            term    => $term,
+            file    => $movie,
+            imdb    => $imdb,
+            title   => $movie_title,
+            season  => $season,
+            episode => $episode
         );
         $episode++ if defined $episode;
     }
@@ -326,7 +334,7 @@ Movies::Organizer - Organize your movies using imdb
 
 =head1 VERSION
 
-version 0.7
+version 0.8
 
 =head1 SYNOPSIS
 
