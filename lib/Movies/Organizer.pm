@@ -13,7 +13,7 @@ package Movies::Organizer;
 use strict;
 use warnings;
 
-our $VERSION = '0.8';    # VERSION
+our $VERSION = '0.9';    # VERSION
 
 use Moo;
 use MooX::Options;
@@ -326,6 +326,7 @@ sub run {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -334,7 +335,7 @@ Movies::Organizer - Organize your movies using imdb
 
 =head1 VERSION
 
-version 0.8
+version 0.9
 
 =head1 SYNOPSIS
 
@@ -366,7 +367,7 @@ Run the tools, and rename properly your movies.
 =head1 BUGS
 
 Please report any bugs or feature requests on the bugtracker website
-https://github.com/celogeek/MoviesOrganizer/issues
+http://tasks.celogeek.com/projects/perl-modules-movies-organizer
 
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired
@@ -384,4 +385,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
