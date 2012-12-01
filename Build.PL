@@ -21,7 +21,7 @@ my %module_build_args = (
     "celogeek <me\@celogeek.com>"
   ],
   "dist_name" => "Movies-Organizer",
-  "dist_version" => "0.9",
+  "dist_version" => "1.0",
   "license" => "perl",
   "module_name" => "Movies::Organizer",
   "recommends" => {},
@@ -33,13 +33,15 @@ my %module_build_args = (
     "File::Glob" => 0,
     "File::Path" => "2.08",
     "File::Spec" => 0,
-    "IMDB::Film" => 0,
+    "JSON::XS" => 0,
     "Moo" => 0,
     "MooX::Options" => 0,
     "Term::ReadLine" => 0,
     "Term::ReadLine::Perl" => 0,
+    "WWW::REST" => 0,
     "perl" => "5.010",
     "strict" => 0,
+    "utf8" => 0,
     "warnings" => 0
   },
   "script_files" => [
