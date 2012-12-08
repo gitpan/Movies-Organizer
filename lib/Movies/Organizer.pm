@@ -13,7 +13,7 @@ package Movies::Organizer;
 use strict;
 use warnings;
 
-our $VERSION = '1.0';    # VERSION
+our $VERSION = '1.1';    # VERSION
 
 use Moo;
 use MooX::Options;
@@ -110,11 +110,13 @@ has '_rs' => (
     default => sub {
         my ($self) = @_;
         my $rs = WWW::REST->new('http://imdbapi.org/');
+        $rs->_ua->agent('Mozilla/5.0');
         $rs->dispatch(
             sub {
                 my $self = shift;
                 croak $self->status_line if $self->is_error;
-                return decode_json( $self->content );
+                my $ct = decode_json( $self->content );
+                return ref $ct eq 'ARRAY' ? $ct->[0] : $ct;
             }
         );
         return $rs;
@@ -373,7 +375,7 @@ Movies::Organizer - Organize your movies using imdb
 
 =head1 VERSION
 
-version 1.0
+version 1.1
 
 =head1 SYNOPSIS
 

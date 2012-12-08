@@ -38,7 +38,7 @@ resources:
   bugtracker: http://tasks.celogeek.com/projects/perl-modules-movies-organizer
   homepage: https://gitorious.celogeek.com/perl-modules/moviesorganizer
   repository: git://gitorious.celogeek.com/perl-modules/moviesorganizer.git
-version: 1.0
+version: 1.1
 x_Dist_Zilla:
   perl:
     version: 5.016002
