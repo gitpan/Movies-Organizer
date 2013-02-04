@@ -15,7 +15,7 @@
 use strict;
 use warnings;
 
-our $VERSION = '1.1'; # VERSION
+our $VERSION = '1.2'; # VERSION
 
 use Movies::Organizer;
 my $organizer = Movies::Organizer->new_with_options;
@@ -31,7 +31,7 @@ movies_organizer - organize your movie specialy for boxee
 
 =head1 VERSION
 
-version 1.1
+version 1.2
 
 =head1 SYNOPSIS
 

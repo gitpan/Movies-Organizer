@@ -13,7 +13,7 @@ package Movies::Organizer;
 use strict;
 use warnings;
 
-our $VERSION = '1.1';    # VERSION
+our $VERSION = '1.2';    # VERSION
 
 use Moo;
 use MooX::Options;
@@ -205,7 +205,7 @@ sub move_movie {
     move( $file, $fdest );
     croak "Error occur !" if -e $file || !-e $fdest;
 
-    $file  =~ s/\.[^\.]+$/.srt/x;
+    $file =~ s/\.[^\.]+$/.srt/x;
     $fdest =~ s/\.[^\.]+$/.srt/x;
 
     if ( -e $file ) {
@@ -270,16 +270,18 @@ sub run {
 
                 $imdb = undef if $imdb->{error};
                 if ($imdb) {
-                    say "Movie    : ", $imdb->{title};
+                    say "Movie    : ", $imdb->{title} // "";
                     say "Aka      : ", join(
                         ', ',
                         map { utf8::encode($_); $_ } ## no critic (ProhibitComplexMappings)
                             @{ $imdb->{also_known_as} // [] }
                     ) if $self->with_aka;
                     say "Kind     : ",
-                        $imdb->{type} eq 'TVS' ? 'Tv Serie' : 'Movie';
-                    say "Year     : ", $imdb->{year};
-                    say "Plot     : ", $imdb->{plot};
+                        ( $imdb->{type} // "" ) eq 'TVS'
+                        ? 'Tv Serie'
+                        : 'Movie';
+                    say "Year     : ", $imdb->{year} // "";
+                    say "Plot     : ", $imdb->{plot} // "";
                     say "Directory: ",
                         join( ', ', @{ $imdb->{directors} // [] } );
                     say "Cast     : ",
@@ -325,7 +327,7 @@ sub run {
                 $episode = $term->readline( "Episode ? > ", $episode );
                 if (   $season =~ /\D/x
                     || $episode =~ /\D/x
-                    || $season  eq ''
+                    || $season eq ''
                     || $episode eq '' )
                 {
                     say "Please, use only numeric values !";
@@ -375,7 +377,7 @@ Movies::Organizer - Organize your movies using imdb
 
 =head1 VERSION
 
-version 1.1
+version 1.2
 
 =head1 SYNOPSIS
 
